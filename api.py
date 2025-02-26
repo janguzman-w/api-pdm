@@ -192,4 +192,5 @@ def not_found(error):
     return jsonify({"error": "Ruta no encontrada"}), 404
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=10000, debug=True)
+    port = int(os.environ.get("PORT", 10000))  # Render asigna un puerto automáticamente
+    app.run(host="0.0.0.0", port=port, debug=True)
